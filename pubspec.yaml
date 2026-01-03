@@ -1,0 +1,31 @@
+name: valboard
+description: Professional Valorant tactical planning application.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.5.1
+  uuid: ^4.4.0
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.0
+  go_router: ^14.0.0
+  http: ^1.2.0  # BU PAKET ŞART
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # BU KISIM ÇOK ÖNEMLİ, RESİMLERİ BURADAN OKUYACAK
+  assets:
+    - assets/agents/
+    - assets/abilities/
+    - assets/maps/
