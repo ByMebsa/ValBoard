@@ -230,7 +230,6 @@ class _TacticsBoardState extends ConsumerState<TacticsBoard> {
   }
 }
 
-// --- RENDER WIDGETLARI (GÜNCELLENDİ: ValoPlant Tarzı) ---
 class _DraggablePlacedAbility extends ConsumerWidget {
   final PlacedAbility placedAbility;
   final GlobalKey mapKey;
@@ -247,20 +246,14 @@ class _DraggablePlacedAbility extends ConsumerWidget {
     if (shape == AbilityShape.icon) {
       content = Container(width: 40, height: 40, padding: const EdgeInsets.all(5), decoration: BoxDecoration(color: Colors.black87, borderRadius: BorderRadius.circular(5), border: Border.all(color: isSelected ? Colors.white : color)), child: Image.asset(placedAbility.ability.iconUrl, color: color));
     } else {
-      // VALOPLANT TARZI RENDER
       content = Container(
         width: size.width, height: size.height,
         decoration: BoxDecoration(
-          // Yarı saydam dolgu
           color: color.withOpacity(0.25),
-          // Belirgin kenarlık (Seçiliyse beyaz, değilse ajanın rengi)
           border: Border.all(color: isSelected ? Colors.white : color.withOpacity(0.9), width: 2.5),
-          // Şekil belirleme
           shape: shape == AbilityShape.circle ? BoxShape.circle : BoxShape.rectangle,
-          // Dikdörtgenler için hafif yuvarlak köşe
           borderRadius: shape == AbilityShape.rectangle ? BorderRadius.circular(6) : null,
         ),
-        // Ortadaki İkon
         child: Center(child: Container(width: 24, height: 24, decoration: BoxDecoration(color: Colors.black.withOpacity(0.6), shape: BoxShape.circle), child: Padding(padding: const EdgeInsets.all(4), child: Image.asset(placedAbility.ability.iconUrl, color: Colors.white)))),
       );
     }
@@ -327,7 +320,6 @@ class _AgentAvatar extends StatelessWidget {
   }
 }
 
-// --- FEEDBACK WIDGET (Sürüklerken görünen) ---
 class _AbilityFeedback extends StatelessWidget {
   final AgentAbility ability;
   final Color color;
@@ -339,8 +331,8 @@ class _AbilityFeedback extends StatelessWidget {
     return Container(
       width: size.width, height: size.height,
       decoration: BoxDecoration(
-        color: color.withOpacity(0.25), // ValoPlant tarzı şeffaflık
-        border: Border.all(color: color.withOpacity(0.9), width: 2.5), // Belirgin kenarlık
+        color: color.withOpacity(0.25),
+        border: Border.all(color: color.withOpacity(0.9), width: 2.5),
         shape: ability.shape == AbilityShape.circle ? BoxShape.circle : BoxShape.rectangle,
         borderRadius: ability.shape == AbilityShape.rectangle ? BorderRadius.circular(6) : null,
       ),

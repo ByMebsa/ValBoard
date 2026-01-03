@@ -24,7 +24,6 @@ class TacticsData {
     return AgentModel(id: id, name: name, role: role, color: color, iconUrl: _localAgent(id), abilities: abilities);
   }
 
-  // --- FULL AJAN LİSTESİ ---
   static final List<AgentModel> kAgentsRoster = [
     _buildAgent(id: 'astra', name: 'Astra', role: 'Controller', color: const Color(0xFF7E49A2),
       customAbilities: {
@@ -32,16 +31,11 @@ class TacticsData {
         'E': AgentAbility(name: "Nebula", type: "Signature", iconUrl: _localAbility('astra', 'e'), shape: AbilityShape.circle, defaultSize: const Size(180, 180), isResizable: true),
       }
     ),
-    // --- BREACH GÜNCELLENDİ (Referans Çizime Göre Tam Boyutlar) ---
     _buildAgent(id: 'breach', name: 'Breach', role: 'Initiator', color: const Color(0xFFD36E35),
       customAbilities: {
-        // C (Aftershock): Orta boy daire (Çizimdeki C'ye uygun)
         'C': AgentAbility(name: "Aftershock", type: "Basic", iconUrl: _localAbility('breach', 'c'), shape: AbilityShape.circle, defaultSize: const Size(140, 140), isResizable: true),
-        // Q (Flashpoint): Küçük daire (Çizimdeki Q'ya uygun)
         'Q': AgentAbility(name: "Flashpoint", type: "Basic", iconUrl: _localAbility('breach', 'q'), shape: AbilityShape.circle, defaultSize: const Size(60, 60), isResizable: true),
-        // E (Fault Line): Çok UZUN ve DAR dikdörtgen (Çizimdeki E'ye uygun)
         'E': AgentAbility(name: "Fault Line", type: "Signature", iconUrl: _localAbility('breach', 'e'), shape: AbilityShape.rectangle, defaultSize: const Size(60, 400), isResizable: true),
-        // X (Rolling Thunder): Çok BÜYÜK ve GENİŞ dikdörtgen (Çizimdeki X'e uygun)
         'X': AgentAbility(name: "Rolling Thunder", type: "Ultimate", iconUrl: _localAbility('breach', 'x'), shape: AbilityShape.rectangle, defaultSize: const Size(300, 400), isResizable: true),
       }
     ),

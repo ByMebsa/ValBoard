@@ -31,25 +31,22 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Ekran boyutunu al
     final size = MediaQuery.of(context).size;
     final isLandscape = size.width > size.height;
 
     return Scaffold(
       backgroundColor: const Color(0xFF0F1923),
       body: SafeArea(
-        // SingleChildScrollView: Ekran yan dönünce aşağı kaydırabilmeyi sağlar (Taşma Çözümü)
         child: Center(
           child: SingleChildScrollView(
             padding: const EdgeInsets.symmetric(vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // LOGO ALANI
                 const Text(
                   "VALBOARD",
                   style: TextStyle(
-                    fontFamily: 'Valorant', // Eğer font yoksa default font kullanır
+                    fontFamily: 'Valorant',
                     fontSize: 60,
                     color: Color(0xFFECE8E1),
                     letterSpacing: 4,
@@ -65,11 +62,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   child: const Text("TACTICAL & STATS COMPANION", style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, letterSpacing: 1.5)),
                 ),
-                
-                SizedBox(height: isLandscape ? 30 : 80), // Yatayda daha az boşluk
-
-                // KARTLAR (Butonlar)
-                // Wrap: Ekran daralırsa butonları alt alta, genişse yan yana dizer
+                SizedBox(height: isLandscape ? 30 : 80),
                 Wrap(
                   spacing: 20,
                   runSpacing: 20,
@@ -94,7 +87,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                
                 const SizedBox(height: 50),
                 const Text("v1.0.5 • Powered by HenrikDev API", style: TextStyle(color: Colors.white24, fontSize: 12)),
               ],
