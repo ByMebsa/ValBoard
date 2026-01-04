@@ -24,7 +24,7 @@ class StatsSearchBox extends StatelessWidget {
   }
 }
 
-// TenZ verisi kaldırıldı, boş bir template bırakıldı (API bağlayınca dolacak)
+
 class ProfileCardMock extends StatelessWidget {
   const ProfileCardMock({super.key});
 
@@ -51,7 +51,7 @@ class StatsGrid extends StatelessWidget {
   const StatsGrid({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(); // API gelince doldurulacak
+    return Container(); 
   }
 }
 
@@ -59,6 +59,6 @@ class MatchHistoryList extends StatelessWidget {
   const MatchHistoryList({super.key});
   @override
   Widget build(BuildContext context) {
-    return Container(); // API gelince doldurulacak
+    return Container();
   }
 }
